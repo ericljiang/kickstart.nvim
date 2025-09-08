@@ -252,6 +252,10 @@ require('lazy').setup({
     cmd = 'VimBeGood',
   },
 
+  {
+    'nvim-java/nvim-java',
+  },
+
   { 'NMAC427/guess-indent.nvim', opts = {} }, -- Detect tabstop and shiftwidth automatically
 
   -- NOTE: Plugins can also be added by using a table,
@@ -689,6 +693,9 @@ require('lazy').setup({
         ts_ls = {},
 
         tailwindcss = {},
+
+        -- https://github.com/nvim-java/nvim-java?tab=readme-ov-file#hammer-how-to-install
+        jdtls = {},
 
         lua_ls = {
           -- cmd = { ... },
