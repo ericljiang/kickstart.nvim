@@ -98,6 +98,9 @@ vim.g.have_nerd_font = false
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
+-- https://gpanders.com/blog/whats-new-in-neovim-0-11/#improved-hover-documentation
+vim.o.winborder = 'rounded'
+
 -- Make line numbers default
 vim.o.number = true
 -- You can also add relative line numbers, to help with jumping.
@@ -862,10 +865,9 @@ require('lazy').setup({
       },
 
       completion = {
-        menu = { border = 'rounded' },
         -- By default, you may press `<c-space>` to show the documentation.
         -- Optionally, set `auto_show = true` to show the documentation after a delay.
-        documentation = { auto_show = true, auto_show_delay_ms = 500, window = { border = 'rounded' } },
+        documentation = { auto_show = true, auto_show_delay_ms = 500 },
       },
 
       sources = {
