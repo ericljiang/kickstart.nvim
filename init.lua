@@ -169,6 +169,9 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+-- for nvim-highlight-colors
+vim.o.termguicolors = true
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -250,6 +253,10 @@ rtp:prepend(lazypath)
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
+  {
+    'brenoprata10/nvim-highlight-colors',
+    opts = {},
+  },
   {
     'ThePrimeagen/vim-be-good',
     cmd = 'VimBeGood',
@@ -868,6 +875,7 @@ require('lazy').setup({
         -- By default, you may press `<c-space>` to show the documentation.
         -- Optionally, set `auto_show = true` to show the documentation after a delay.
         documentation = { auto_show = true, auto_show_delay_ms = 500 },
+        -- TODO integration with nvim-highlight-colors
       },
 
       sources = {
