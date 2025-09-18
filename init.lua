@@ -254,6 +254,18 @@ rtp:prepend(lazypath)
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   {
+    'tpope/vim-fugitive',
+  },
+  {
+    'tpope/vim-rhubarb',
+  },
+  {
+    url = 'ssh://git.amazon.com:2222/pkg/Vim-code-browse',
+    branch = 'mainline',
+    dependencies = 'tpope/vim-fugitive',
+    event = 'VeryLazy',
+  },
+  {
     'brenoprata10/nvim-highlight-colors',
     opts = {},
   },
