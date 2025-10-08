@@ -273,7 +273,11 @@ require('lazy').setup({
     'ThePrimeagen/vim-be-good',
     cmd = 'VimBeGood',
   },
-
+  {
+    'https://github.com/Weyaaron/nvim-training',
+    pin = true,
+    opts = {},
+  },
   {
     'nvim-java/nvim-java',
   },
@@ -720,6 +724,8 @@ require('lazy').setup({
         -- https://github.com/nvim-java/nvim-java?tab=readme-ov-file#hammer-how-to-install
         jdtls = {},
 
+        hls = {},
+
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },
@@ -931,16 +937,16 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      -- vim.cmd.colorscheme 'tokyonight-night'
+      vim.cmd.colorscheme 'tokyonight-night'
     end,
   },
-  {
-    'yorickpeterse/vim-paper',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'paper'
-    end,
-  },
+  -- {
+  --   'yorickpeterse/vim-paper',
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd.colorscheme 'paper'
+  --   end,
+  -- },
   -- {
   --   'rose-pine/neovim',
   --   priority = 1000,
