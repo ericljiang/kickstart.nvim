@@ -259,12 +259,12 @@ require('lazy').setup({
   {
     'tpope/vim-rhubarb',
   },
-  -- {
-  --   url = 'ssh://git.amazon.com:2222/pkg/Vim-code-browse',
-  --   branch = 'mainline',
-  --   dependencies = 'tpope/vim-fugitive',
-  --   event = 'VeryLazy',
-  -- },
+  {
+    url = 'ssh://git.amazon.com:2222/pkg/Vim-code-browse',
+    branch = 'mainline',
+    dependencies = 'tpope/vim-fugitive',
+    event = 'VeryLazy',
+  },
   {
     'brenoprata10/nvim-highlight-colors',
     opts = {},
@@ -273,15 +273,48 @@ require('lazy').setup({
     'ThePrimeagen/vim-be-good',
     cmd = 'VimBeGood',
   },
-  {
-    'https://github.com/Weyaaron/nvim-training',
-    pin = true,
-    opts = {},
-  },
+  -- {
+  --   'https://github.com/Weyaaron/nvim-training',
+  --   pin = true,
+  --   opts = {},
+  -- },
   {
     'nvim-java/nvim-java',
   },
+  {
+    'epwalsh/obsidian.nvim',
+    version = '*', -- recommended, use latest release instead of latest commit
+    lazy = true,
+    ft = 'markdown',
+    -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
+    -- event = {
+    --   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
+    --   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/*.md"
+    --   -- refer to `:h file-pattern` for more examples
+    --   "BufReadPre path/to/my-vault/*.md",
+    --   "BufNewFile path/to/my-vault/*.md",
+    -- },
+    dependencies = {
+      -- Required.
+      'nvim-lua/plenary.nvim',
 
+      -- see below for full list of optional dependencies 👇
+    },
+    opts = {
+      workspaces = {
+        {
+          name = 'personal',
+          path = '~/personal/Personal Obsidian Vault',
+        },
+        {
+          name = 'work',
+          path = '~/Documents/Work Obsidian Vault',
+        },
+      },
+
+      -- see below for full list of options 👇
+    },
+  },
   { 'NMAC427/guess-indent.nvim', opts = {} }, -- Detect tabstop and shiftwidth automatically
 
   -- NOTE: Plugins can also be added by using a table,
@@ -719,12 +752,14 @@ require('lazy').setup({
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         ts_ls = {},
 
+        eslint = {},
+
         tailwindcss = {},
 
         -- https://github.com/nvim-java/nvim-java?tab=readme-ov-file#hammer-how-to-install
         jdtls = {},
 
-        hls = {},
+        -- hls = {},
 
         lua_ls = {
           -- cmd = { ... },
@@ -1048,18 +1083,18 @@ require('lazy').setup({
   -- In normal mode type `<space>sh` then write `lazy.nvim-plugin`
   -- you can continue same window with `<space>sr` which resumes last telescope search
 
-  {
-    'kawre/leetcode.nvim',
-    build = ':TSUpdate html', -- if you have `nvim-treesitter` installed
-    dependencies = {
-      -- include a picker of your choice, see picker section for more details
-      'nvim-lua/plenary.nvim',
-      'MunifTanjim/nui.nvim',
-    },
-    opts = {
-      lang = 'typescript',
-    },
-  },
+  -- {
+  --   'kawre/leetcode.nvim',
+  --   build = ':TSUpdate html', -- if you have `nvim-treesitter` installed
+  --   dependencies = {
+  --     -- include a picker of your choice, see picker section for more details
+  --     'nvim-lua/plenary.nvim',
+  --     'MunifTanjim/nui.nvim',
+  --   },
+  --   opts = {
+  --     lang = 'typescript',
+  --   },
+  -- },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
