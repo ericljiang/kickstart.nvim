@@ -260,12 +260,6 @@ require('lazy').setup({
     'tpope/vim-rhubarb',
   },
   {
-    url = 'ssh://git.amazon.com:2222/pkg/Vim-code-browse',
-    branch = 'mainline',
-    dependencies = 'tpope/vim-fugitive',
-    event = 'VeryLazy',
-  },
-  {
     'brenoprata10/nvim-highlight-colors',
     opts = {},
   },
@@ -1076,7 +1070,7 @@ require('lazy').setup({
   --    This is the easiest way to modularize your config.
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
   --
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!
